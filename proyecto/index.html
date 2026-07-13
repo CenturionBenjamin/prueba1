@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX Motors — Concesionaria Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="APEX Motors inicio">
+        <span class="logo__mark">▲</span>
+        <span class="logo__text">APEX<em>Motors</em></span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="nav" id="nav" aria-label="Menú principal">
+        <a href="#hero"     class="nav__link">Inicio</a>
+        <a href="#marcas"   class="nav__link">Marcas</a>
+        <a href="#catalogo" class="nav__link">Catálogo</a>
+        <a href="#footer"   class="nav__link">Contacto</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header__actions">
+        <!-- Dark mode toggle -->
+        <button class="btn-icon" id="themeToggle" aria-label="Cambiar tema" title="Modo oscuro/claro">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Favorites -->
+        <button class="btn-icon" id="favBtn" aria-label="Mis favoritos">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="favCount">0</span>
+        </button>
+
+        <!-- Cart -->
+        <button class="btn-icon cart-btn" id="cartBtn" aria-label="Abrir carrito">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menú móvil" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero" aria-label="Sección principal">
+    <div class="hero__bg">
+      <!-- SVG car silhouette as decorative element -->
+      <svg class="hero__car-svg" viewBox="0 0 900 350" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="450" cy="310" rx="400" ry="18" fill="rgba(0,0,0,0.18)"/>
+        <path d="M120 260 C120 260 160 170 260 155 C310 148 350 130 450 128 C560 126 620 148 680 158 C760 170 790 210 800 250 L810 260 Z" fill="url(#bodyGrad)"/>
+        <path d="M270 155 C290 110 340 85 420 78 C490 72 545 82 590 100 C640 120 670 148 680 158 Z" fill="url(#roofGrad)"/>
+        <circle cx="230" cy="265" r="45" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+        <circle cx="230" cy="265" r="28" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+        <circle cx="230" cy="265" r="10" fill="#444"/>
+        <circle cx="690" cy="265" r="45" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+        <circle cx="690" cy="265" r="28" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+        <circle cx="690" cy="265" r="10" fill="#444"/>
+        <rect x="130" y="225" width="130" height="8" rx="4" fill="rgba(255,200,50,0.7)"/>
+        <rect x="750" y="235" width="40" height="6" rx="3" fill="rgba(255,80,80,0.7)"/>
+        <defs>
+          <linearGradient id="bodyGrad" x1="120" y1="200" x2="810" y2="260" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#2c2c2c"/>
+            <stop offset="40%" stop-color="#1a1a1a"/>
+            <stop offset="100%" stop-color="#111"/>
+          </linearGradient>
+          <linearGradient id="roofGrad" x1="270" y1="78" x2="680" y2="158" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#222"/>
+            <stop offset="100%" stop-color="#111"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="hero__grid" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Concesionaria Premium · Buenos Aires</p>
+      <h1 class="hero__title">
+        Maneja tu<br/>
+        <span class="hero__title--accent">próxima historia.</span>
+      </h1>
+      <p class="hero__sub">Más de 24 modelos de las marcas más exclusivas del mundo. Financiación sin interés, garantía extendida y entrega inmediata.</p>
+      <div class="hero__cta">
+        <a href="#catalogo" class="btn btn--primary">Ver Catálogo</a>
+        <a href="#marcas"   class="btn btn--ghost">Explorar Marcas</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><strong id="statVehicles">24</strong><span>Vehículos</span></div>
+        <div class="hero__stat"><strong id="statBrands">6</strong><span>Marcas</span></div>
+        <div class="hero__stat"><strong id="statYears">15+</strong><span>Años de exp.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRANDS ===== -->
+  <section class="brands" id="marcas" aria-label="Marcas disponibles">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Marcas Disponibles</h2>
+        <p class="section-sub">Representantes oficiales de las marcas más reconocidas del mundo automotriz</p>
+      </div>
+      <div class="brands__grid" id="brandsGrid">
+        <!-- Generated by JS -->
+      </div>
+      <!-- Dynamic stats -->
+      <div class="brands__stats" id="brandStats"></div>
+    </div>
+  </section>
+
+  <!-- ===== CATALOG ===== -->
+  <section class="catalog" id="catalogo" aria-label="Catálogo de vehículos">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Catálogo</h2>
+        <p class="section-sub">Encontrá el vehículo perfecto para vos</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters" id="filters" role="search">
+        <div class="filters__search">
+          <svg class="filters__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" class="input" placeholder="Buscar por nombre o modelo…" aria-label="Buscar vehículo"/>
+        </div>
+        <div class="filters__row">
+          <div class="filter-group">
+            <label class="filter-label" for="brandFilter">Marca</label>
+            <select id="brandFilter" class="select" aria-label="Filtrar por marca">
+              <option value="">Todas las marcas</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="sortFilter">Ordenar</label>
+            <select id="sortFilter" class="select" aria-label="Ordenar vehículos">
+              <option value="default">Predeterminado</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="name-asc">Nombre A–Z</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="tagFilter">Etiqueta</label>
+            <select id="tagFilter" class="select" aria-label="Filtrar por etiqueta">
+              <option value="">Todas</option>
+              <option value="Nuevo">Nuevo</option>
+              <option value="Oferta">Oferta</option>
+              <option value="Más vendido">Más vendido</option>
+              <option value="Destacado">Destacado</option>
+            </select>
+          </div>
+          <button class="btn btn--outline" id="clearFilters">Limpiar filtros</button>
+        </div>
+      </div>
+
+      <!-- Results info -->
+      <p class="results-info" id="resultsInfo" aria-live="polite"></p>
+
+      <!-- Vehicle grid -->
+      <div class="vehicles-grid" id="vehiclesGrid" role="list" aria-label="Lista de vehículos">
+        <!-- Generated by JS -->
+      </div>
+
+      <p class="no-results" id="noResults">
+        No se encontraron vehículos con los filtros seleccionados.
+        <button class="btn btn--outline" id="clearFilters2">Limpiar filtros</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+    <div class="cart__header">
+      <h2 class="cart__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Carrito
+      </h2>
+      <button class="btn-icon" id="closeCart" aria-label="Cerrar carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart__body" id="cartBody">
+      <!-- Generated by JS -->
+    </div>
+    <div class="cart__footer" id="cartFooter">
+      <!-- Generated by JS -->
+    </div>
+  </aside>
+
+  <!-- ===== VEHICLE MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalles del vehículo">
+    <div class="modal" id="modal">
+      <button class="modal__close btn-icon" id="closeModal" aria-label="Cerrar modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__content" id="modalContent">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal-overlay" id="checkoutOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Proceso de compra">
+    <div class="modal modal--checkout" id="checkoutModal">
+      <button class="modal__close btn-icon" id="closeCheckout" aria-label="Cerrar checkout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__content" id="checkoutContent">
+        <!-- Steps handled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FAVORITES MODAL ===== -->
+  <div class="modal-overlay" id="favOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mis favoritos">
+    <div class="modal" id="favModal">
+      <button class="modal__close btn-icon" id="closeFav" aria-label="Cerrar favoritos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__content" id="favContent"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="logo logo--light">
+            <span class="logo__mark">▲</span>
+            <span class="logo__text">APEX<em>Motors</em></span>
+          </a>
+          <p class="footer__desc">La concesionaria premium más importante de Buenos Aires. Tu próximo auto, a un paso.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram" class="social-link">IG</a>
+            <a href="#" aria-label="Facebook" class="social-link">FB</a>
+            <a href="#" aria-label="YouTube" class="social-link">YT</a>
+            <a href="#" aria-label="WhatsApp" class="social-link">WA</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Navegación</h3>
+          <ul class="footer__list">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#marcas">Marcas</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#footer">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Marcas</h3>
+          <ul class="footer__list" id="footerBrands"></ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Contacto</h3>
+          <ul class="footer__list footer__list--contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Av. del Libertador 5000, CABA
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (011) 4800-APEX
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@apexmotors.com.ar
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Lun–Sáb: 9:00 – 20:00
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 APEX Motors. Todos los derechos reservados.</p>
+        <p>Diseñado con ♦ en Buenos Aires</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
