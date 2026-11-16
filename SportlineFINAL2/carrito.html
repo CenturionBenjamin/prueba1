@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTLINE - Carrito de compras</title>
+    <link rel="icon" type="image/png" href="img/favicon-sp.png">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="index.html" aria-label="SPORTLINE - Inicio"><img src="img/logo-sportline.png" alt="SPORTLINE Agencia Automotriz"></a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">🛒 Carrito <span class="contador-carrito" id="contadorCarrito" hidden>0</span></a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a id="enlaceCuenta" href="acceso.html">Ingresar</a></li>
+                <li><button class="btn-nav" id="cerrarSesion" type="button" hidden>Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="carrito-layout">
+            <section>
+                <h2 class="carrito-titulo">Tu carrito</h2>
+                <div id="listaCarrito"></div>
+            </section>
+            <aside class="resumen-panel">
+                <p class="resumen-titulo">Resumen de compra</p>
+                <div class="resumen-fila"><span>Unidades</span><span id="resumenCantidad">0</span></div>
+                <div class="resumen-fila"><span>Subtotal</span><span id="resumenSubtotal">$ 0</span></div>
+                <div class="resumen-fila total"><span>Total</span><span id="resumenTotal">$ 0</span></div>
+                <button class="btn-comprar" id="btnFinalizarCompra" type="button">Finalizar compra</button>
+                <p class="resumen-nota">Para confirmar la compra necesitás ingresar a tu cuenta. El stock se verifica nuevamente en Firebase.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <h2><span>SPORT</span>LINE</h2>
+        <p>Agencia automotriz · Atención y asesoramiento personalizado</p>
+        <a href="contacto.html">Contactanos</a>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="contador-carrito.js"></script>
+    <script type="module" src="auth-ui.js"></script>
+    <script type="module" src="carrito.js"></script>
+</body>
+</html>

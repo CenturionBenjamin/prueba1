@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTLINE - Contacto</title>
+    <link rel="icon" type="image/png" href="img/favicon-sp.png">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="index.html" aria-label="SPORTLINE - Inicio"><img src="img/logo-sportline.png" alt="SPORTLINE Agencia Automotriz"></a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">🛒 Carrito <span class="contador-carrito" id="contadorCarrito" hidden>0</span></a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a id="enlaceCuenta" href="acceso.html">Ingresar</a></li>
+                <li><button class="btn-nav" id="cerrarSesion" type="button" hidden>Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-formulario">
+        <section class="formulario-panel">
+            <span class="eyebrow">Estamos para ayudarte</span>
+            <h2>Contactate con SPORTLINE</h2>
+            <p class="texto-formulario">Dejanos tu consulta sobre un vehículo o nuestros servicios y la guardaremos para su seguimiento.</p>
+
+            <form id="formContacto">
+                <label for="nombre">Nombre y apellido</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder="Tu nombre">
+
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" name="correo" type="email" autocomplete="email" required maxlength="120" placeholder="tu correo electrónico">
+
+                <label for="telefono">Teléfono (opcional)</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" maxlength="30" placeholder="Tu teléfono">
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="1000" rows="5" placeholder="Escribí tu consulta..."></textarea>
+
+                <button class="btn-comprar" id="btnEnviarConsulta" type="submit">Enviar consulta</button>
+            </form>
+            <p class="nota-formulario">El formulario registra tu consulta en la base de datos de SPORTLINE.</p>
+        </section>
+    </main>
+
+    <footer>
+        <h2><span>SPORT</span>LINE</h2>
+        <p>Agencia automotriz · Atención y asesoramiento personalizado</p>
+        <a href="index.html">Volver al inicio</a>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="contador-carrito.js"></script>
+    <script type="module" src="auth-ui.js"></script>
+    <script type="module" src="contacto.js"></script>
+</body>
+</html>

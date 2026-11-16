@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPORTLINE, agencia automotriz. Explorá vehículos, consultá disponibilidad y gestioná tus compras.">
+    <title>SPORTLINE - Agencia Automotriz</title>
+    <link rel="icon" type="image/png" href="img/favicon-sp.png">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="index.html" aria-label="SPORTLINE - Inicio"><img src="img/logo-sportline.png" alt="SPORTLINE Agencia Automotriz"></a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">🛒 Carrito <span class="contador-carrito" id="contadorCarrito" hidden>0</span></a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a id="enlaceCuenta" href="acceso.html">Ingresar</a></li>
+                <li><button class="btn-nav" id="cerrarSesion" type="button" hidden>Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <span class="eyebrow">Agencia automotriz</span>
+            <h2>Encontrá tu próximo vehículo</h2>
+            <p>Explorá nuestro catálogo y conocé cada modelo con información clara sobre su precio y disponibilidad.</p>
+            <a class="hero-accion" href="#catalogo">Explorar vehículos</a>
+        </section>
+
+        <section id="catalogo" class="seccion-contenido">
+            <div class="encabezado-seccion">
+                <span class="eyebrow">Catálogo SPORTLINE</span>
+                <h2>Nuestros vehículos</h2>
+                <p>Elegí un modelo para conocer sus detalles y agregarlo a tu carrito.</p>
+            </div>
+            <div id="boxproductos" aria-live="polite"></div>
+        </section>
+
+        <section class="preguntas-frecuentes">
+            <div class="encabezado-seccion">
+                <span class="eyebrow">Te ayudamos</span>
+                <h2>Preguntas frecuentes</h2>
+                <p>Información útil antes de realizar una compra.</p>
+            </div>
+            <div class="faq-lista">
+                <details>
+                    <summary>¿Cómo consulto la disponibilidad de un vehículo?</summary>
+                    <p>En el catálogo y en el detalle de cada vehículo se muestra la cantidad disponible registrada en el sistema.</p>
+                </details>
+                <details>
+                    <summary>¿Necesito una cuenta para comprar?</summary>
+                    <p>Sí. Tenés que ingresar o crear una cuenta para confirmar una compra y actualizar el stock.</p>
+                </details>
+                <details>
+                    <summary>¿Dónde puedo revisar mis compras?</summary>
+                    <p>En la sección Historial podés consultar las compras registradas en el navegador que estés utilizando.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo puedo hacer una consulta?</summary>
+                    <p>Ingresá a Contacto y completá el formulario. Tu mensaje quedará registrado para su seguimiento.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2><span>SPORT</span>LINE</h2>
+        <p>Agencia automotriz · Atención y asesoramiento personalizado</p>
+        <a href="contacto.html">Contactanos</a>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="contador-carrito.js"></script>
+    <script type="module" src="auth-ui.js"></script>
+    <script type="module" src="cargarproductos.js"></script>
+</body>
+</html>

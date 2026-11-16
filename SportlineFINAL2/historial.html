@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTLINE - Historial de compras</title>
+    <link rel="icon" type="image/png" href="img/favicon-sp.png">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="index.html" aria-label="SPORTLINE - Inicio"><img src="img/logo-sportline.png" alt="SPORTLINE Agencia Automotriz"></a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">🛒 Carrito <span class="contador-carrito" id="contadorCarrito" hidden>0</span></a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a id="enlaceCuenta" href="acceso.html">Ingresar</a></li>
+                <li><button class="btn-nav" id="cerrarSesion" type="button" hidden>Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <span class="eyebrow">SPORTLINE</span>
+            <h2>Historial de compras</h2>
+            <p>Consultá las compras registradas desde este navegador.</p>
+        </section>
+        <div id="listaHistorial" class="historial-lista"></div>
+    </main>
+
+    <footer>
+        <h2><span>SPORT</span>LINE</h2>
+        <p>Agencia automotriz · Atención y asesoramiento personalizado</p>
+        <a href="contacto.html">Contactanos</a>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="contador-carrito.js"></script>
+    <script type="module" src="auth-ui.js"></script>
+    <script src="historial.js"></script>
+</body>
+</html>

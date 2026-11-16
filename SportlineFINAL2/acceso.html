@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTLINE - Mi cuenta</title>
+    <link rel="icon" type="image/png" href="img/favicon-sp.png">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="index.html" aria-label="SPORTLINE - Inicio"><img src="img/logo-sportline.png" alt="SPORTLINE Agencia Automotriz"></a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">🛒 Carrito <span class="contador-carrito" id="contadorCarrito" hidden>0</span></a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a id="enlaceCuenta" href="acceso.html">Mi cuenta</a></li>
+                <li><button class="btn-nav" id="cerrarSesion" type="button" hidden>Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-formulario">
+        <section class="formulario-panel">
+            <span class="eyebrow">SPORTLINE</span>
+            <h2 id="tituloAcceso">Ingresar a tu cuenta</h2>
+            <p class="texto-formulario">Creá una cuenta o ingresá para confirmar tus compras.</p>
+
+            <div id="estadoCuenta" class="estado-cuenta" hidden></div>
+
+            <form id="formAcceso">
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tu correo electrónico" required maxlength="120">
+
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" name="contrasena" type="password" autocomplete="current-password" placeholder="Mínimo 6 caracteres" required minlength="6" maxlength="64">
+
+                <button class="btn-comprar" id="btnAcceso" type="submit">Ingresar</button>
+            </form>
+
+            <p class="cambiar-modo"><span id="textoModo">¿Todavía no tenés cuenta?</span> <button id="cambiarModo" type="button">Crear una cuenta</button></p>
+            <button class="btn-secundario btn-salir-cuenta" id="cerrarSesionCuenta" type="button" hidden>Cerrar sesión</button>
+        </section>
+    </main>
+
+    <footer>
+        <h2><span>SPORT</span>LINE</h2>
+        <p>Agencia automotriz · Atención y asesoramiento personalizado</p>
+        <a href="contacto.html">Contactanos</a>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="contador-carrito.js"></script>
+    <script type="module" src="auth-ui.js"></script>
+    <script type="module" src="acceso.js"></script>
+</body>
+</html>
